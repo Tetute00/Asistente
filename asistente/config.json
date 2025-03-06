@@ -10,7 +10,7 @@
       "notifications": true
     },
     "voice_assistant": {
-      "ai_studio_api_key": "AIzaSyAkjXC54GrLsBqpDoHAVDWG_FDdJTwgeF0",
+      "ai_studio_api_key": "",
       "ai_studio_url": "https://api.aistudio.com/v1/chat/completions",
       "ai_studio_model": "gpt-4",
       "voice_rate": 150,
