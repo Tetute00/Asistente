@@ -1,0 +1,1 @@
+# Esquemas de conexión para el hardware

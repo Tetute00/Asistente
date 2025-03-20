@@ -1,0 +1,1 @@
+# Modelo de estado del sistema

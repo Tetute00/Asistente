@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS - Asistente Personal</title>
+    <meta name="description" content="Asistente personal digital avanzado">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="img/icons/icon-192x192.png">
+    <meta name="theme-color" content="#2196F3">
+    <!--WebSocket-->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>JARVIS</h1>
+            <div class="status-indicator online">
+                <span class="dot"></span>
+                <span class="text">Online</span>
+            </div>
+        </header>
+        
+        <main>
+            <section class="dashboard">
+                <h2>Panel de Control</h2>
+                <div class="dashboard-grid">
+                    <!-- Los componentes se cargarán dinámicamente aquí -->
+                    <div class="card system-status">Cargando estado del sistema...</div>
+                </div>
+            </section>
+            
+            <section class="assistant">
+                <h2>Asistente</h2>
+                <div class="chat-container">
+                    <div class="chat-messages">
+                        <div class="message system">
+                            ¡Bienvenido a JARVIS! ¿En qué puedo ayudarte hoy?
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+                        <button id="send-button">Enviar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>JARVIS v1.0.0 - Desarrollado por Tetute00</p>
+        </footer>
+    </div>
+    
+    <script src="js/websocket.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+    <script>
+        // Registrar Service Worker para PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+              .then(reg => console.log('Service Worker registrado'))
+              .catch(err => console.log('Error al registrar Service Worker', err));
+        }
+    </script>
+</body>
+</html>
